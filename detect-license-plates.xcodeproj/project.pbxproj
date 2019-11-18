@@ -10,9 +10,11 @@
 		6CCDC3F02381C1340006848A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCDC3EF2381C1340006848A /* AppDelegate.swift */; };
 		6CCDC3F22381C1340006848A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCDC3F12381C1340006848A /* SceneDelegate.swift */; };
 		6CCDC3F42381C1340006848A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCDC3F32381C1340006848A /* ViewController.swift */; };
-		6CCDC3F72381C1340006848A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CCDC3F52381C1340006848A /* Main.storyboard */; };
 		6CCDC3F92381C1390006848A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CCDC3F82381C1390006848A /* Assets.xcassets */; };
 		6CCDC3FC2381C1390006848A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CCDC3FA2381C1390006848A /* LaunchScreen.storyboard */; };
+		6CCDC4042381C2490006848A /* model_plate_turi.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6CCDC4032381C2490006848A /* model_plate_turi.mlmodel */; };
+		6CCDC4062381C2AD0006848A /* DrawingBoundingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCDC4052381C2AB0006848A /* DrawingBoundingBoxView.swift */; };
+		6CCDC4082381C8B10006848A /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCDC4072381C8B10006848A /* VideoCapture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +22,12 @@
 		6CCDC3EF2381C1340006848A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CCDC3F12381C1340006848A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6CCDC3F32381C1340006848A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6CCDC3F62381C1340006848A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CCDC3F82381C1390006848A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CCDC3FB2381C1390006848A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CCDC3FD2381C1390006848A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CCDC4032381C2490006848A /* model_plate_turi.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_plate_turi.mlmodel; sourceTree = "<group>"; };
+		6CCDC4052381C2AB0006848A /* DrawingBoundingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingBoundingBoxView.swift; sourceTree = "<group>"; };
+		6CCDC4072381C8B10006848A /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,33 @@
 		6CCDC3EE2381C1340006848A /* detect-license-plates */ = {
 			isa = PBXGroup;
 			children = (
+				6CCDC40E2382E4730006848A /* CoreML-Model */,
+				6CCDC40D2382E4630006848A /* Utilities */,
 				6CCDC3EF2381C1340006848A /* AppDelegate.swift */,
 				6CCDC3F12381C1340006848A /* SceneDelegate.swift */,
 				6CCDC3F32381C1340006848A /* ViewController.swift */,
-				6CCDC3F52381C1340006848A /* Main.storyboard */,
 				6CCDC3F82381C1390006848A /* Assets.xcassets */,
 				6CCDC3FA2381C1390006848A /* LaunchScreen.storyboard */,
 				6CCDC3FD2381C1390006848A /* Info.plist */,
 			);
 			path = "detect-license-plates";
+			sourceTree = "<group>";
+		};
+		6CCDC40D2382E4630006848A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6CCDC4072381C8B10006848A /* VideoCapture.swift */,
+				6CCDC4052381C2AB0006848A /* DrawingBoundingBoxView.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6CCDC40E2382E4730006848A /* CoreML-Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CCDC4032381C2490006848A /* model_plate_turi.mlmodel */,
+			);
+			path = "CoreML-Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +149,6 @@
 			files = (
 				6CCDC3FC2381C1390006848A /* LaunchScreen.storyboard in Resources */,
 				6CCDC3F92381C1390006848A /* Assets.xcassets in Resources */,
-				6CCDC3F72381C1340006848A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +160,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CCDC3F42381C1340006848A /* ViewController.swift in Sources */,
+				6CCDC4042381C2490006848A /* model_plate_turi.mlmodel in Sources */,
 				6CCDC3F02381C1340006848A /* AppDelegate.swift in Sources */,
+				6CCDC4062381C2AD0006848A /* DrawingBoundingBoxView.swift in Sources */,
+				6CCDC4082381C8B10006848A /* VideoCapture.swift in Sources */,
 				6CCDC3F22381C1340006848A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +171,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6CCDC3F52381C1340006848A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6CCDC3F62381C1340006848A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6CCDC3FA2381C1390006848A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
